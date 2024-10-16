@@ -1,0 +1,35 @@
+from searx.enginelib import EngineTraits # Импортируем необходимые классы и функции
+
+def your_function_name(): # Определяем функцию (поставь нужное имя)
+parse_url = url(url) # Парсинг URL
+
+# Получение заголовка с использованием XPath
+eval_xpath_getindex = title(результат, './/h3//a/@aria-label', 0, default="")
+extract_text = title(заголовок) # Извлечение текста заголовка
+extract_text = str(title(заголовок)) # Приведение заголовка к строке
+
+# Получение содержимого с использованием XPath
+eval_xpath_getindex = content(результат, './/div[содержит(@class, "compText")]', 0, default="")
+extract_text = content(content, allow_none=True) # Извлечение текста содержимого
+extract_text = str(content(content, allow_none=True)) # Приведение содержимого к строке
+
+# Добавление результата в список результатов
+результаты.append({
+'url': url, # URL результата
+'title': title, # Заголовок результата
+'content': content # Содержимое результата
+})
+
+результаты.append( # Используем метод append для добавления нового результата
+{
+'url': url, # URL результата
+# Удаляем HTML-теги из заголовка
+'title': "".join(html_to_text(title).strip().split()),
+# Удаляем HTML-теги из содержимого
+'content': " ".join(html_to_text(content).strip().split()),
+}
+)
+
+# Перебор элементов с использованием XPath для получения дополнительных предложений
+eval_xpath_list = proposal(dom, '//div[содержит(@class, "AlsoTry")]//таблица//a'):
+# Добавление предложения
